@@ -7,9 +7,9 @@ public class MainCourse extends Menu implements Upgradeable {
     private String Carbo;
     private String MeatBallType;
 
-	public MainCourse(Integer iD, String name, Integer price, String description, Integer portion, String carbo,
+	public MainCourse(Integer iD, String name, Integer price, String description, String size, String carbo,
 			String meatBallType) {
-		super(iD, name, price, description, portion);
+		super(iD, name, price, description, size);
 		Carbo = carbo;
 		MeatBallType = meatBallType;
 	}
@@ -30,23 +30,16 @@ public class MainCourse extends Menu implements Upgradeable {
 		MeatBallType = meatBallType;
 	}
 
-	public void increasePrice(Integer price){
-		price += 15000;
-	}
 
-	public void increasePortion(Integer portion){
-		portion += 1;
+	@Override
+	public void IncreasePrice() {
+		Integer upgrade = this.getPrice() / 2;
+		this.setPrice(this.getPrice() + upgrade);
 	}
 
 	@Override
-	public void increasePrice() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void increasePortion() {
-		// TODO Auto-generated method stub
+	public void UpSize() {
+		this.setSize("Sharing");
 		
 	}
 

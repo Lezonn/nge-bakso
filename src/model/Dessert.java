@@ -6,8 +6,8 @@ import java.util.Arrays;
 public class Dessert extends Menu implements Upgradeable {
     private String Topping;
     
-	public Dessert(Integer iD, String name, Integer price, String description, Integer portion, String topping) {
-		super(iD, name, price, description, portion);
+	public Dessert(Integer iD, String name, Integer price, String description, String size, String topping) {
+		super(iD, name, price, description, size);
 		Topping = topping;
 	}
 
@@ -19,23 +19,16 @@ public class Dessert extends Menu implements Upgradeable {
 		Topping = topping;
 	}
 
-	public void increasePrice(Integer price){
-		price += 20000;
-	}
-
-	public void increasePortion(Integer portion){
-		portion += 1;
-	}
-
 	@Override
-	public void increasePrice() {
-		// TODO Auto-generated method stub
+	public void IncreasePrice() {
+        Integer upgrade = this.getPrice() / 2;
+		this.setPrice(this.getPrice() + upgrade);
 		
 	}
 
 	@Override
-	public void increasePortion() {
-		// TODO Auto-generated method stub
+	public void UpSize() {
+		this.setSize("Large");
 		
 	}
 	

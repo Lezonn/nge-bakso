@@ -23,7 +23,7 @@ public class MenuRepository {
 			ps.setString(2, drink.getName());
 			ps.setInt(3, drink.getPrice());
 			ps.setString(4, drink.getDescription());
-			ps.setInt(5, drink.getPortion());
+			ps.setString(5, drink.getSize());
 			ps.setBoolean(6, drink.getIsCold());
 			ps.executeUpdate();
 		} catch (SQLException e) {
@@ -44,7 +44,7 @@ public class MenuRepository {
 			ps.setString(2, mainCourse.getName());
 			ps.setInt(3, mainCourse.getPrice());
 			ps.setString(4, mainCourse.getDescription());
-			ps.setInt(5, mainCourse.getPortion());
+			ps.setString(5, mainCourse.getSize());
 			ps.setString(6, mainCourse.getCarbo());
 			ps.setString(7, mainCourse.getMeatBallType());
 			ps.executeUpdate();
@@ -64,7 +64,7 @@ public class MenuRepository {
 			ps.setString(2, dessert.getName());
 			ps.setInt(3, dessert.getPrice());
 			ps.setString(4, dessert.getDescription());
-			ps.setInt(5, dessert.getPortion());
+			ps.setString(5, dessert.getSize());
 			ps.setString(6, dessert.getTopping());
 			ps.executeUpdate();
 		} catch (SQLException e) {
@@ -106,7 +106,7 @@ public class MenuRepository {
 						rs.getString("Name"), 
 						rs.getInt("Price"),
 						rs.getString("Description"), 
-						rs.getInt("Portion"), 
+						rs.getString("Size"),
 						rs.getBoolean("IsCold")));
 			}
 		} catch (SQLException e) {
@@ -138,7 +138,7 @@ public class MenuRepository {
 						rs.getString("Name"), 
 						rs.getInt("Price"),
 						rs.getString("Description"), 
-						rs.getInt("Portion"),
+						rs.getString("Size"),
 						rs.getString("Carbo"),
 						rs.getString("MeatType")
 						));
@@ -172,7 +172,7 @@ public class MenuRepository {
 						rs.getString("Name"), 
 						rs.getInt("Price"),
 						rs.getString("Description"), 
-						rs.getInt("Portion"),
+						rs.getString("Size"),
 						rs.getString("Topping")
 				)
 				

@@ -7,14 +7,14 @@ public abstract class Menu {
 	private String Name;
 	private Integer Price;
 	private String Description;
-	private Integer Portion;
+	private String Size;
 	
-	public Menu(Integer iD, String name, Integer price, String description, Integer portion) {
+	public Menu(Integer iD, String name, Integer price, String description, String size) {
 		ID = iD;
 		Name = name;
 		Price = price;
 		Description = description;
-		Portion = portion;
+		Size = size;
 	}
 	
 	public abstract ArrayList<String> GetMenuDetailString(Integer num);
@@ -51,12 +51,12 @@ public abstract class Menu {
 		Description = description;
 	}
 	
-	public Integer getPortion() {
-		return Portion;
+	public String getSize() {
+		return Size;
 	}
 	
-	public void setPortion(Integer portion) {
-		Portion = portion;
+	public void setSize(String size) {
+		Size = size;
 	}
 	
 	

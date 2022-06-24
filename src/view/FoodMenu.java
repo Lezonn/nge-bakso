@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 import factory.MenuFactory;
 import helper.InputHelper;
+import helper.PrintMenuHelper;
 import helper.TableHelper;
 import model.Dessert;
 import model.Drink;
@@ -41,25 +42,6 @@ public class FoodMenu {
 		
 		return true;
 	}
-	
-	private void PrintMenu(ArrayList<Menu> menus) {
-		TableHelper.PrintLine();
-		
-		TableHelper.PrintRow(new ArrayList<>(Arrays.asList(
-					"No", "Name", "Price", 
-					"Description", "Type","IsCold", 
-					"Carbo", "MeatType", "Topping"))
-				);
-		
-		TableHelper.PrintLine();
-		
-		int num = 1;
-		
-		for(Menu m : menus) {
-			TableHelper.PrintRow(m.GetMenuDetailString(num++));
-		}
-		TableHelper.PrintLine();
-	}
 
 	private void ViewMenu(){
 		ArrayList<Menu> listMenu = menuRepository.LoadMenu();
@@ -67,7 +49,7 @@ public class FoodMenu {
 		if(checkListMenuIsEmpty(listMenu)) {
 			return;
 		}
-		PrintMenu(listMenu);
+		PrintMenuHelper.PrintMenu(listMenu);
 		InputHelper.PressEnter();
 	}
 	
@@ -77,7 +59,7 @@ public class FoodMenu {
 		if(checkListMenuIsEmpty(listMenu)) {
 			return;
 		}
-		PrintMenu(listMenu);
+		PrintMenuHelper.PrintMenu(listMenu);
 		
 		int len = listMenu.size();
 		int idx = InputHelper.InputInteger("Choose menu number to delete [1 - " + len + "]: ", 1, len);
@@ -115,7 +97,7 @@ public class FoodMenu {
 		price = InputHelper.InputInteger("Input Menu Price : ", 1, 1000000);
 		desc = InputHelper.InputStringWithLen("Input Menu Description : ", 5, 100);
 		
-		Menu menu = MenuFactory.CreateMenu(name, price, desc, choice);
+		Menu menu = MenuFactory.CreateMenu(name, price, desc, "Reguler", choice);
 		
 		if(choice.equals("Drink")){
 			InsertDrink((Drink)menu);

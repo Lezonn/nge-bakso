@@ -1,6 +1,6 @@
 package model;
 
 public interface Upgradeable  {
-	public void increasePrice();
-	public void increasePortion();
+	public void IncreasePrice();
+	public void UpSize();
 }

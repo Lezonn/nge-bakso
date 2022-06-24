@@ -6,8 +6,8 @@ import java.util.Arrays;
 public class Drink extends Menu {
     private Boolean IsCold;
 
-	public Drink(Integer iD, String name, Integer price, String description, Integer portion, Boolean isCold) {
-		super(iD, name, price, description, portion);
+	public Drink(Integer iD, String name, Integer price, String description, String size, Boolean isCold) {
+		super(iD, name, price, description, size);
 		IsCold = isCold;
 	}
 
