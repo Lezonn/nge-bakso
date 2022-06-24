@@ -51,7 +51,12 @@ import helper.InputHelper;
 		2.) Factory
 			-> Kami menggunakan design pattern factory di project ini untuk membantu pembuatan object
 			   Menu yang memiliki 3 child class.
-			
+	
+	- Database Connection
+		-> Pertama buat database bernama "ngebakso" di phpmyadmin.
+		-> Lalu di database yang telah dibuat, import file 'ngebakso.sql'.
+		-> Dan yang terakhir pastikan di file Connect variabel DATABASE memiliki value ngebakso.
+
 */
 
 
